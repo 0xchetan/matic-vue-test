@@ -1,29 +1,20 @@
-# matic-test-vue
+## 1. Clone the Project
 
-## Project setup
 ```
+git clone https://github.com/thecyberlord/matic-vue-test.git
+```
+
+## 2. Install NPM Packages
+
+```
+cd /matic-vue-test
 npm install
 ```
 
-### Compiles and hot-reloads for development
+## 3. Run Project
 ```
 npm run serve
 ```
 
-### Compiles and minifies for production
-```
-npm run build
-```
 
-### Run your tests
-```
-npm run test
-```
 
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
