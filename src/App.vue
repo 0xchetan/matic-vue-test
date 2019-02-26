@@ -22,9 +22,8 @@ export default {
         const to = '0xc15d8950f6a98dc1708200b1ad368c95d3990ecb' // to address
 
         const token = '0xdda2b0cea46316192fb440611acc1b36dd16f49f' // test token address
-        const newAmount = '4000000000000000000' // amount in wei
+        const amount = '4000000000000000000' // amount in wei
         
-        console.log(config.MATIC_PROVIDER)
         // Create object of Matic
         const matic = new Matic({
           maticProvider: config.MATIC_PROVIDER,
@@ -35,13 +34,30 @@ export default {
           maticWethAddress: config.MATICWETH_ADDRESS,
         })
 
-        matic.wallet = '0x' + config.privateKey // prefix with `0x`
+        matic.wallet = '0x'+ config.privateKey // prefix with `0x`
 
-      matic
-  .getMappedTokenAddress("0xC4375B7De8af5a38a93548eb8453a498222C4fF2")
-  .then(address => {
-    console.log("matic address", address)
-  })},
+// Approve token
+matic
+  .approveTokensForDeposit(token, amount, {
+    from,
+    onTransactionHash: (hash) => {
+        console.log(hash)
+      // action on Transaction success
+    },
+  })
+  .then((response) => {
+      console.log(response)
+
+    // Deposit tokens
+    matic.depositTokens(token, from, amount, {
+        from,
+        onTransactionHash: (hash) => {
+            console.log('deposit success')
+            console.log(hash)
+        },
+      
+  })
+})}
     },
     mounted() {
 

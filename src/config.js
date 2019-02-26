@@ -5,7 +5,7 @@ let config = {
     SYNCER_URL: 'https://eth-syncer.api.matic.network/api/v1',
     WATCHER_URL: 'https://eth-watcher.api.matic.network/api/v1',
     MATICWETH_ADDRESS: '0xFCbE295b918848001eB43941Db3fF9b6439a5e13',
-    privateKey:'',
+    privateKey:'<add-private-key-here>',
   }
 
 export default config;
